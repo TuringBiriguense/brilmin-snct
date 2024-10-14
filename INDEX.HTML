@@ -1,12 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>O Homem e o Lobo Guará</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <!-- Som de fundo -->
+    <audio id="forest-audio" src="floresta.mp3" loop autoplay></audio>
+
+    <div class="book-container">
+        <!-- Página 1 -->
+        <div class="page" id="page-1">
+            <h1>O Homem e o Lobo Guará</h1>
+           <p> Numa encantadora manhã de outono, no coração do cerrado paulista, um astuto lobo guará passeava.
+            Até que então, ele avista um homem de cabelos grisalhos, jogando gasolina numa mata com a intenção de incendia-la,
+             para que ela se regenerasse mais forte.</p>
+
+            <!-- Área clicável para o som do lobo -->
+            <img id="lobo" src="imagens/lobo-guarapng.png" alt="Lobo Guará" class="clickable-image">
+            <!-- Área clicável para o som do homem -->
+            <img id="homem" src="imagens/velho.png" alt="Homem" class="clickable-image">
+
+            <button onclick="nextPage(2)">Próxima Página</button>
+        </div>
+
+        <!-- Página 2 -->
+        <div class="page" id="page-2" style="display: none;">
+            <p> - O que pensa que está fazendo?! - diz o lobo.
+            "Saia daqui! Animal enxerido! " - respondeu o velho.
+            "Não pensas nas consequencias de seus atos? Não vês que isso se espalhará por uma grande parte da floresta?"
+            - Ponderou Guará.
+            "Eu faço o que eu quiser! Essa terra é minha!"- respondeu o homem, irredutível.
+            "Sua? Tens certeza? Você apenas tem o direito de usa-la! Se  for assim, ela deveria ser dos indigenas e dos animais, que aqui estavam antes de você grila-la!"
+
+        O homem começa a jogar pedras no animal, que foge.
+        Ele apagou o fogo após um tempo de queima, e foi embora satisfeito.</p>
+
+            <!-- Imagens diferentes -->
+            <img id="lobo" src="imagens/lobo-guara2.png"" alt="Lobo Guará" class="clickable-image">
+            <img id="homem" src="imagens/velho.png" alt="Homem" class="clickable-image">
+
+            <button onclick="prevPage(1)">Voltar Página</button>
+            <button onclick="nextPage(3)">Próxima Página</button>
+        </div>
+
+        <!-- Página 3 -->
+        <div class="page" id="page-3" style="display: none;">
+            <p>O lobo, visivelmente debilitado, diz ao homem...</p>
+
+            <!-- Imagens diferentes -->
+            <img id="lobo" src="lobo3.jpg" alt="Lobo Guará" class="clickable-image">
+            <img id="homem" src="homem3.jpg" alt="Homem" class="clickable-image">
+
+            <button onclick="prevPage(2)">Voltar Página</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
