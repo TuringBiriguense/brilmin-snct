@@ -1,17 +1,20 @@
 // Função para tocar som ao clicar nos personagens
-document.getElementById('lobo').addEventListener('click', function() {
-    const loboAudio = new Audio('lobo.mp3');
-    loboAudio.play();
-});
+function addClickEventsForPage(pageNumber) {
+    if (pageNumber === 1||pageNumber === 2||pageNumber === 3) {
+        // Página 1 - Som do lobo e do homem
+        document.getElementById('lobo').addEventListener('click', function() {
+            const loboAudio = new Audio('audio/loboguara.mp3');
+            loboAudio.play();
+        });
 
-document.getElementById('homem').addEventListener('click', function() {
-    const homemAudio = new Audio('homem.mp3');
-    homemAudio.play();
-});
+        document.getElementById('homem').addEventListener('click', function() {
+            const homemAudio = new Audio('audio/velho.m4a');
+            homemAudio.play();
+        });
 
-// Função para tocar o som de fundo
-const forestAudio = document.getElementById('forest-audio');
-forestAudio.volume = 0.5; // Ajustar o volume do som da floresta
+    } 
+    // Adicione outros eventos de clique para páginas futuras, se necessário
+}
 
 // Função para tocar som de papel ao trocar de página
 function playPaperSound() {
@@ -19,7 +22,7 @@ function playPaperSound() {
     paperAudio.play();
 }
 
-// Função para mudar para a próxima página
+// Função para mudar para a próxima página e configurar eventos de clique
 function nextPage(pageNumber) {
     // Tocar som de papel
     playPaperSound();
@@ -32,6 +35,9 @@ function nextPage(pageNumber) {
     if (nextPage) {
         nextPage.style.display = 'block';
     }
+
+    // Adicionar os eventos de clique para a nova página
+    addClickEventsForPage(pageNumber);
 }
 
 // Função para voltar para a página anterior
@@ -47,7 +53,13 @@ function prevPage(pageNumber) {
     if (prevPage) {
         prevPage.style.display = 'block';
     }
+
+    // Adicionar os eventos de clique para a página anterior
+    addClickEventsForPage(pageNumber);
 }
 
 // Exibir a primeira página ao carregar
 document.getElementById('page-1').style.display = 'block';
+
+// Adicionar os eventos de clique para a primeira página
+addClickEventsForPage(1);
